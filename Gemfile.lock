@@ -1,0 +1,38 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    activesupport (4.0.1)
+      i18n (~> 0.6, >= 0.6.4)
+      minitest (~> 4.2)
+      multi_json (~> 1.3)
+      thread_safe (~> 0.1)
+      tzinfo (~> 0.3.37)
+    atomic (1.1.14)
+    haml (4.0.4)
+      tilt
+    i18n (0.6.5)
+    minitest (4.7.5)
+    multi_json (1.8.2)
+    pg (0.17.0)
+    rack (1.5.2)
+    rack-protection (1.5.0)
+      rack
+    sass (3.2.12)
+    sinatra (1.4.3)
+      rack (~> 1.4)
+      rack-protection (~> 1.4)
+      tilt (~> 1.3, >= 1.3.4)
+    thread_safe (0.1.3)
+      atomic
+    tilt (1.4.1)
+    tzinfo (0.3.38)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  activesupport
+  haml
+  pg
+  sass
+  sinatra

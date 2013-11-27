@@ -1,0 +1,28 @@
+!!!
+%html
+  %head
+    %title TF-IDF/BM25 Full Text Search
+    %link{ :rel => :stylesheet, :href => '/stylesheets/style.css' }
+    %script{ :type => 'text/javascript', :src => '/javascripts/jquery.js' }
+    %script{ :type => 'text/javascript', :src => '/javascripts/app.js' }
+  %body
+    - if @index.use_tf_idf
+      TF-IDF
+      %a{ :href => '/use_bm_25' } Use BM25
+    - else
+      %a{ :href => '/use_tf_idf' } Use TF-IDF
+      BM25
+    .content
+      %input{ :type => :text }
+      %button Search
+      .result
+    .documents
+      = "#{ @count } documents"
+      %form{ :method => :post, :action => '/add' }
+        %textarea{ :name => :text }
+        .submit-button
+          %input{ :type => :submit, :value => 'Add Document' }
+      - @documents.each do |document|
+        .document
+          %a{ :href => "/show/#{ document['id'] }"}= document['text'][0..100]
+          %a{ :href => "/delete/#{ document['id' ]}", :class => :del } x

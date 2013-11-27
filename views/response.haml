@@ -1,0 +1,13 @@
+- if @documents.any?
+  - @documents.each do |document|
+    .document
+      - matched_text = document[:normalized_text].dup
+      - @words.each do |word|
+        - matched_text.gsub!(" #{ word } ", " <span class='match'>#{ word }</span> ")
+      %a{ :href => "/show/#{ document[:id] }" }= matched_text
+      .score= document[:score]
+- else
+  Not Found any documents.
+  .query
+    query:
+    = params[:q]
